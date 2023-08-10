@@ -34,6 +34,7 @@ erase ex_graph.gph
 
 ## A brute force solution
 One way to solve this problem is to do some reverse engineering, that is, collect all the instances of gr_edit commands under a single program. This is the philosophy of gr_postproduce. 
+
 Let's generate a graph:
 ```
 clear
