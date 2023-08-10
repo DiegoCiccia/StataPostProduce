@@ -65,7 +65,7 @@ gr_edit .legend.plotregion1.label[1].text.Arrpush First Variable
 gr_edit .legend.plotregion1.label[2].text = {} 
 gr_edit .legend.plotregion1.label[2].text.Arrpush Second Variable 
 ```
-The syntax above is quite complex and cannot be learned from official documentation. The only way to learn gr_edit is by recording the manual changes to existing graphs. This is a procedure that is [documented])(https://www.stata.com/support/faqs/graphics/graph-recorder/) in Stata. 
+The syntax above is quite complex and cannot be learned from official documentation. The only way to learn gr_edit is by recording the manual changes to existing graphs. This is a procedure that is [documented](https://www.stata.com/support/faqs/graphics/graph-recorder/) in Stata. 
 
 This program is meant to be a "translator" from Stata syntax to gr_edit. You can use the following line to replicate the edited graph:
 
