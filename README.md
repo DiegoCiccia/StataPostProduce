@@ -69,7 +69,7 @@ The syntax above is quite complex and cannot be learned from official documentat
 This program is meant to be a "translator" from Stata syntax to gr_edit. You can use the following line to replicate the edited graph:
 
 ```
-gr_postproduce demo, title("Demo") xtitle("x title") ytitle("y title") obj(1 mc(red) ms(0.6), 2 msiz(1) mc(blue), 3 lp(solid) lc(black)) leg_rename("First Variable", "Second Variable")
+gr_postproduce demo, title("Demo") xtitle("x title") ytitle("y title") obj(1 mc(red), 2 msiz(1) mc(blue), 3 lp(solid) lc(black)) leg_rename("First Variable", "Second Variable")
 ```
 A lot more familiar, I suppose. Notice the *obj* options: it applies new options to each of the 3 graph objects in the figure (two scatters and a linear fit). Let's see the updated graph:
 
