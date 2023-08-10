@@ -2,7 +2,7 @@
 A Stata package that translates gr_edit commands into user-friendly codes.
 BETA VERSION
 
-## Installation
+## Setup
 To install this program, just copy and paste the following line in your Stata prompt:
 
 ```
