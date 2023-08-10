@@ -1,5 +1,6 @@
 # StataPostProduce
 A Stata package that translates gr_edit commands into user-friendly codes.
+BETA VERSION
 
 ## Installation
 To install this program, just copy and paste the following line in your Stata prompt:
@@ -31,6 +32,49 @@ graph close
 erase ex_graph.gph
 ```
 
+## A brute force solution
+One way to solve this problem is to do some reverse engineering, that is, collect all the instances of gr_edit commands under a single program. This is the philosophy of gr_postproduce. Let's generate a graph:
+```
+clear
+set obs 50
+set seed 0
+gen v1 = uniform()
+gen v2 = v1 * -2 + uniform() 
+gen v3 = uniform()
+scatter v1 v2 || scatter v1 v3 || lfit v1 v2, saving("demo.gph", replace) leg(pos(6) cols(3))
 
+```
+[demo.pdf](https://github.com/DiegoCiccia/StataPostProduce/files/12314525/demo.pdf)
 
+Assume that you got demo.gph without its source code and you want to change its design (add a title, add axes titles, change the colors, ...). One way to do it would be through the following gr_edit commands:
+```
+gr_edit .title.text = {"Demo"} 
+gr_edit .xaxis1.title.text = {"x title"} 
+gr_edit .yaxis1.title.text = {"y title"} 
+gr_edit .plotregion1.plot1.style.editstyle marker(fillcolor(red)) editcopy 
+gr_edit .plotregion1.plot1.style.editstyle marker(linestyle(color(red))) editcopy 
+gr_edit .plotregion1.plot1.style.editstyle marker(symbol(0.6)) editcopy 
+gr_edit .plotregion1.plot2.style.editstyle marker(size(1)) editcopy 
+gr_edit .plotregion1.plot2.style.editstyle marker(fillcolor(blue)) editcopy 
+gr_edit .plotregion1.plot2.style.editstyle marker(linestyle(color(blue))) editcopy 
+gr_edit .plotregion1.plot3.style.editstyle line(pattern(solid)) editcopy 
+gr_edit .plotregion1.plot3.style.editstyle line(color(black)) editcopy 
+gr_edit .legend.plotregion1.label[1].text = {} 
+gr_edit .legend.plotregion1.label[1].text.Arrpush First Variable 
+gr_edit .legend.plotregion1.label[2].text = {} 
+gr_edit .legend.plotregion1.label[2].text.Arrpush Second Variable 
+```
+The syntax above is quite complex and cannot be learned from official documentation. The only way to learn gr_edit is by recording the manual changes to existing graphs. This is a procedure that is [documented])(https://www.stata.com/support/faqs/graphics/graph-recorder/) in Stata. 
 
+This program is meant to be a "translator" from Stata syntax to gr_edit. You can use the following line to replicate the edited graph:
+
+```
+gr_postproduce demo, title("Demo") xtitle("x title") ytitle("y title") obj(1 mc(red) ms(0.6), 2 msiz(1) mc(blue), 3 lp(solid) lc(black)) leg_rename("First Variable", "Second Variable")
+```
+A lot more familiar, I suppose. Notice the *obj* options: it applies new options to each of the 3 graph objects in the figure (two scatters and a linear fit). Let's see the updated graph:
+
+[demo_post.pdf](https://github.com/DiegoCiccia/StataPostProduce/files/12314588/demo_post.pdf)
+
+## The next steps
+
+So far, this command can set new titles, change colors and patterns of graph objects and change the content and position of the legend. There are several ways to improve on that. However, due to the coding strategy of this command, all new developments critically hinge on the analysis of .grec files which are generated through the Stata Graph Recorder. Therefore, keep me updated on what is currently missing and share with me any feature that you would like to incorporate in this command.
