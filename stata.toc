@@ -1,0 +1,8 @@
+v 1.0.0
+d Diego Ciccia
+d cicciadiego99@gmail.com
+d https://github.com/DiegoCiccia/StataPostProduce
+
+d 'gr_postproduce': Stata graph post-production 
+
+p gr_postproduce
