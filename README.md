@@ -53,7 +53,6 @@ gr_edit .xaxis1.title.text = {"x title"}
 gr_edit .yaxis1.title.text = {"y title"} 
 gr_edit .plotregion1.plot1.style.editstyle marker(fillcolor(red)) editcopy 
 gr_edit .plotregion1.plot1.style.editstyle marker(linestyle(color(red))) editcopy 
-gr_edit .plotregion1.plot1.style.editstyle marker(symbol(0.6)) editcopy 
 gr_edit .plotregion1.plot2.style.editstyle marker(size(1)) editcopy 
 gr_edit .plotregion1.plot2.style.editstyle marker(fillcolor(blue)) editcopy 
 gr_edit .plotregion1.plot2.style.editstyle marker(linestyle(color(blue))) editcopy 
