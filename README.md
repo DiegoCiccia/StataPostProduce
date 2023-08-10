@@ -3,9 +3,10 @@ A Stata package that translates gr_edit commands into user-friendly codes.
 
 ## Installation
 To install this program, just copy and paste the following line in your Stata prompt:
-'''
+
+```
 net install gr_postproduce, from("https://raw.githubusercontent.com/DiegoCiccia/StataPostProduce/main") replace
-'''
+```
 
 ## The One Piece of Stata Programming
 It has been more than 15 years since the first [posts](https://www.stata.com/statalist/archive/2007-07/msg00616.html) (complaining) about gr_edit were uploaded to Statalist. For those of you who are unfamiliar with gr_edit, it is a Stata command that allows the user to edit .gph files (Stata graphs) after they are generated. In principle, it is a very useful routine: you can use it for re-format graphs made by other people or you can modify figures which are printed in their default setting through external packages. One can also do the same tasks manually, through the graph editor. However, there are two problems in doing so:
