@@ -79,3 +79,8 @@ A lot more familiar, I suppose. Notice the *obj* options: it applies new options
 ## Next steps
 
 So far, this command can set new titles, change colors and patterns of graph objects and change the content and position of the legend. There are several ways to improve on that. However, due to the coding strategy of this command, all new developments critically hinge on the analysis of .grec files which are generated through the Stata Graph Recorder. Therefore, keep me updated on what is currently missing and share with me any feature that you would like to incorporate in this command.
+
+##
+This is a beta version. Please report bugs in the Issues section.
+For any other information, contact me by e-mail: cicciadiego99@gmail.com
+
