@@ -44,7 +44,7 @@ gen v3 = uniform()
 scatter v1 v2 || scatter v1 v3 || lfit v1 v2, saving("demo.gph", replace) leg(pos(6) cols(3))
 
 ```
-[demo.pdf](https://github.com/DiegoCiccia/StataPostProduce/files/12314525/demo.pdf)
+![demo](https://github.com/DiegoCiccia/StataPostProduce/assets/71022390/c96307e8-4e21-4cc5-b288-ffd36fccecc7)
 
 Assume that you got demo.gph without its source code and you want to change its design (add a title, add axes titles, change the colors, ...). One way to do it would be through the following gr_edit commands:
 ```
@@ -73,7 +73,7 @@ gr_postproduce demo, title("Demo") xtitle("x title") ytitle("y title") obj(1 mc(
 ```
 A lot more familiar, I suppose. Notice the *obj* options: it applies new options to each of the 3 graph objects in the figure (two scatters and a linear fit). Let's see the updated graph:
 
-[demo_post.pdf](https://github.com/DiegoCiccia/StataPostProduce/files/12314588/demo_post.pdf)
+![demo_post](https://github.com/DiegoCiccia/StataPostProduce/assets/71022390/91cc2bf1-bc80-4e07-af22-cace412d6267)
 
 ## The next steps
 
