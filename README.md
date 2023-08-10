@@ -74,6 +74,6 @@ A lot more familiar, I suppose. Notice the *obj* options: it applies new options
 
 ![demo_post](https://github.com/DiegoCiccia/StataPostProduce/assets/71022390/91cc2bf1-bc80-4e07-af22-cace412d6267)
 
-## The next steps
+## Next steps
 
 So far, this command can set new titles, change colors and patterns of graph objects and change the content and position of the legend. There are several ways to improve on that. However, due to the coding strategy of this command, all new developments critically hinge on the analysis of .grec files which are generated through the Stata Graph Recorder. Therefore, keep me updated on what is currently missing and share with me any feature that you would like to incorporate in this command.
