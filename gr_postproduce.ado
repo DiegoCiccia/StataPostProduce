@@ -7,6 +7,9 @@ syntax anything,
         title(string)
         xtitle(string)
         ytitle(string)
+        subtitle(string)
+        note(string)
+        caption(string)
 
         obj(string)
 
@@ -42,6 +45,15 @@ foreach v in `anything' {
         }
         if length("`ytitle'") != 0 {
             grec_write grec "gr_edit .yaxis1.title.text" "`ytitle'"
+        }
+        if length("`subtitle'") != 0 {
+            grec_write grec "gr_edit .subtitle.text" "`subtitle'"
+        }
+        if length("`caption'") != 0 {
+            grec_write grec "gr_edit .caption.text" "`caption'"
+        }
+        if length("`note'") != 0 {
+            grec_write grec "gr_edit .note.text" "`note'"
         }
 
         if length("`obj'") != 0 {
